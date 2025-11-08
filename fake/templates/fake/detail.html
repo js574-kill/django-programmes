@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>{{ personne.firstName }} {{ personne.lastName }}</h1>
+
+<ul>
+  <li><strong>ID :</strong> {{ personne.guid }}</li>
+  <li><strong>Entreprise :</strong> {{ personne.company }}</li>
+  <li><strong>Téléphone :</strong> {{ personne.phone }}</li>
+  <li><strong>Email :</strong> {{ personne.email }}</li>
+  <li><strong>Pays :</strong> {{ personne.country }}</li>
+  <li><strong>Région :</strong> {{ personne.region }}</li>
+  <li><strong>Ville :</strong> {{ personne.city }}</li>
+  <li><strong>Adresse :</strong> {{ personne.address }}</li>
+  <li><strong>Montant :</strong> {{ personne.amount }}</li>
+  <li><strong>Nombre de voitures :</strong> {{ personne.cars }}</li>
+  <li><strong>Bio :</strong> {{ personne.bio }}</li>
+  <li><a href="{{ personne.publicUrl }}" target="_blank">Lien public</a></li>
+</ul>
+
+{% comment %} <a href="{% url 'identites_html' %}">⬅ Retour à la liste</a> {% endcomment %}
+
+{% endblock %}

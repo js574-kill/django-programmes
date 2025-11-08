@@ -1,0 +1,15 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<h1>Liste des identités</h1>
+
+<div class="identity-grid">
+  {% for personne in identites %}
+  <div class="identity-card">
+    <a href="{% url 'detail_identite' personne.id %}">
+      <strong>{{ personne.firstName }} {{ personne.lastName }}</strong>
+      <span>Profession : {{ personne.company }}</span>
+    </a>
+    <a href="{% url 'detail_identite' personne.id %}"><button class="btn">Voir plus</button></a>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

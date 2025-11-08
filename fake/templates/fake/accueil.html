@@ -1,0 +1,114 @@
+{% extends 'base.html' %} 
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      {% block title %} Fake Identity Generator | Home Page {% endblock title %}
+    </title>
+    <link
+      rel="icon"
+      href="{% static 'fake/img/logo_white.png' %}"
+      type="image/png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
+    {% comment %}
+    <link rel="stylesheet" href="{% static  %}" />
+    {% block css %} {% endblock css %} {% endcomment %}
+  </head>
+  <body>
+
+    {% block content %}
+    
+
+    <main>
+      <section class="hero">
+        <div class="description">
+          <h1>Find quickly a dummy <span>identity</span> just by one click!</h1>
+          <p>
+            This is a web application that helps you find quickly a generated
+            fake identity ready to be used everywhere at anytime on any website
+            you want to use it. Just click the button below to explore all the
+            identities listed on <span>identities page</span>
+          </p>
+          <a href="{% url 'liste_identites' %}"
+            ><button>Explore More</button></a
+          >
+        </div>
+        <img src="{% static 'fake/img/homme.webp' %}" alt="" />
+        <div class="hero-image">
+          <img src="{% static 'fake/img/hero.webp' %}" alt="hero image" />
+        </div>
+      </section>
+      <section class="testimonies">
+        <h2>WHAT OTHERS SAY ABOUT US</h2>
+        <div class="testimonials">
+          <article>
+            <div class="content">
+              <img
+                src="{% static 'fake/icons/profil.jpg' %}"
+                alt="testimony 1"
+              />
+              <h3>John Franklin</h3>
+            </div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
+              recusandae ipsam, tempore saepe minima odit similique voluptate et
+              dolore consequuntur delectus possimus id necessitatibus eligendi
+              voluptas voluptates. Dignissimos, odit a? Voluptas quod nihil enim
+              tempore sit. Animi iusto rem, voluptas quos qui porro provident
+              voluptatum tempora amet modi sapiente accusamus molestiae officia
+              possimus minima cupiditate corporis ea. Unde, quos ut.
+            </p>
+          </article>
+          <article>
+            <div class="content">
+              <img
+                src="{% static 'fake/icons/profil.jpg' %}"
+                alt="testimony 2"
+              />
+              <h3>John Franklin</h3>
+            </div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
+              recusandae ipsam, tempore saepe minima odit similique voluptate et
+              dolore consequuntur delectus possimus id necessitatibus eligendi
+              voluptas voluptates. Dignissimos, odit a? Voluptas quod nihil enim
+              tempore sit. Animi iusto rem, voluptas quos qui porro provident
+              voluptatum tempora amet modi sapiente accusamus molestiae officia
+              possimus minima cupiditate corporis ea. Unde, quos ut.
+            </p>
+          </article>
+          <article>
+            <div class="content">
+              <img
+                src="{% static 'fake/icons/profil.jpg' %}"
+                alt="testimony 3"
+              />
+              <h3>John Franklin</h3>
+            </div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla
+              recusandae ipsam, tempore saepe minima odit similique voluptate et
+              dolore consequuntur delectus possimus id necessitatibus eligendi
+              voluptas voluptates. Dignissimos, odit a? Voluptas quod nihil enim
+              tempore sit. Animi iusto rem, voluptas quos qui porro provident
+              voluptatum tempora amet modi sapiente accusamus molestiae officia
+              possimus minima cupiditate corporis ea. Unde, quos ut.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    {% endblock content %}
+  </body>
+</html>

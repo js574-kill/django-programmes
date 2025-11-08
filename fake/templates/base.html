@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}Mon site Django{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'fake/style.css' %}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const cards = document.querySelectorAll(".identity-card");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
+      cards.forEach((card) => observer.observe(card));
+    });
+  </script>
+
+  <body>
+    <header>
+      <div class="logo">
+        <img src="{% static 'fake/img/logo.jpg' %}" alt="Logo de notre site" />
+        <h3>Fake Identity Generator</h3>
+      </div>
+      <nav>
+        <a href="{% url 'accueil' %}">Home</a>
+        <a href="{% url 'liste_identites' %}">Identities</a>
+      </nav>
+    </header>
+
+    <main class="content">{% block content %} {% endblock %}</main>
+    <footer class="footer">
+      <p>&copy; 2025 MonSite - Tous droits réservés.</p>
+      <section class="media">
+        <img src="{% static 'fake/icons/facebook.png' %}" alt="Facebook" />
+        <img src="{% static 'fake/icons/instagram.png' %}" alt="Instagram" />
+        <img src="{% static 'fake/icons/youtube.png' %}" alt="YouTube" />
+        <img src="{% static 'fake/icons/linkedin.png' %}" alt="LinkedIn" />
+      </section>
+      <div class="copyright">
+        <p>Created by John Semenou</p>
+      </div>
+    </footer>
+  </body>
+</html>
