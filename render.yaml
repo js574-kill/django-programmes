@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: django-programmes
+    env: python
+    buildCommand: "pip install -r requirements.txt && python manage.py collectstatic --noinput"
+    startCommand: "gunicorn identite.wsgi:application"
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: "identite.settings"
+    staticPublishPath: staticfiles
